@@ -5,3 +5,12 @@
     background:rgba(139, 139, 139, 0.03);
 }
 
+
+#fullWidth {
+    width:50%;
+    margin:0 auto;
+}
+#fullWidth canvas {
+    width:100%; 
+    min-height:300px; max-height:800px;
+}
