@@ -1,5 +1,7 @@
 .graph {
-    width:40%;
+    width:30%;
+    padding:10px;
     float:left;
+    background:rgba(139, 139, 139, 0.03);
 }
 

@@ -23,8 +23,8 @@ $(document).ready(function(){
         datasets: [
             {
                 label: "One",
-                fillColor: "rgba(220,220,220,0.3)",
-                strokeColor: "rgba(220,220,220,1)",
+                fillColor: "rgba(45,45,220,0.3)",
+                strokeColor: "rgba(45,45,220,0.3)",
                 pointColor: "rgba(220,220,220,1)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
@@ -59,7 +59,7 @@ $(document).ready(function(){
         scaleOverride: true, 
         scaleStartValue: 100, 
         scaleStepWidth: 10, 
-        scaleSteps: 3
+        scaleSteps: 4
     });
     
     setInterval(function(){
@@ -75,11 +75,12 @@ $(document).ready(function(){
             if(myLineChart2.datasets[0].points[i].value>121){
                 myLineChart2.datasets[0].points[i].fillColor = "rgba(255,45,45,0.5)";   
             } else {
-                myLineChart2.datasets[0].points[i].fillColor= "rgba(220,220,220,0.3)";
+                myLineChart2.datasets[0].points[i].fillColor="rgba(220,220,220,0.3)";
             }
         }
         myLineChart2.update();
-    },100);
+    },1000);
+    
     
 
 });
