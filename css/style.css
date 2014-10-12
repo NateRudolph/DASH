@@ -10,7 +10,7 @@
     width:50%;
     margin:0 auto;
 }
-#fullWidth canvas {
+#fullWidth #map {
     width:100%; 
     min-height:300px; max-height:800px;
 }
