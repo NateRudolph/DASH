@@ -90,7 +90,6 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 
 // add a marker in the given location, attach some popup content to it and open the popup
 L.marker([41.590963, -93.720354]).addTo(map)
-    .bindPopup('A pretty CSS3 popup. <br> Easily customizable.')
-    .openPopup();
+    .bindPopup('A pretty CSS3 popup. <br> Easily customizable.');
 
 });
