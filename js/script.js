@@ -89,7 +89,18 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // add a marker in the given location, attach some popup content to it and open the popup
-L.marker([41.590963, -93.720354]).addTo(map)
-    .bindPopup('A pretty CSS3 popup. <br> Easily customizable.');
-
+var markers = [];
+    
+   markers.push(L.marker([41.590963, -93.720354]).addTo(map).bindPopup('{Dynamic info on this rig}'));
+   markers.push(L.marker([41.614742, -93.642556]).addTo(map).bindPopup('{Dynamic info on this rig}'));
+   markers.push(L.marker([41.534352, -93.847177]).addTo(map).bindPopup('{Dynamic info on this rig}'));
+   markers.push(L.marker([41.675802, -93.650109]).addTo(map).bindPopup('{Dynamic info on this rig}'));
+   markers.push(L.marker([41.639378, -93.494584]).addTo(map).bindPopup('{Dynamic info on this rig}'));
+    
+    var group = new L.featureGroup([markers[0],markers[1],markers[2],markers[3],markers[4]]);
+    map.fitBounds(group.getBounds());
+    
+    
+    
+    
 });
