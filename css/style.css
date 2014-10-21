@@ -49,3 +49,19 @@ body {
     min-height:600px;
 /*    min-height:300px; max-height:800px;*/
 }
+
+#list {
+    list-style-type:none;
+    margin:0; padding:0;
+}
+
+#list li {
+    padding:30px;
+}
+#list li:nth-child(even) {
+    background:#2f4353;
+}
+#list li:hover {
+    cursor:pointer;
+    background:#2980B9;
+}
