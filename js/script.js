@@ -120,7 +120,7 @@ var markers = [];
    markers.push(L.marker([41.639378, -93.494584]).addTo(map).bindPopup('{Dynamic info on this rig}'));
     
     var group = new L.featureGroup([markers[0],markers[1],markers[2],markers[3],markers[4]]);
-    map.fitBounds(group.getBounds());
+    map.fitBounds(group.getBounds(), {padding:[30,30]});
     
     listListeners(map, markers);
     

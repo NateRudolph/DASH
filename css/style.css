@@ -14,7 +14,6 @@ body {
     color:white;
     height:100%;
 }
-
 #sideMenu {
     font-family: 'Oswald', sans-serif;
     background: #2C3E50;
@@ -24,13 +23,13 @@ body {
 #sideMenu h1 {
     margin-left:1%;
     padding-top:3%;
-     font-weight:400;   
+    font-weight:400; 
+    text-transform: uppercase;
 }
 #main {
     font-family: 'Quattrocento', serif;
     font-weight:400;
     width:70%; height:100%;
-/*    position:relative;*/
     float:left;
 }
 .graph {
@@ -39,8 +38,6 @@ body {
     float:left;
     background:rgba(139, 139, 139, 0.03);
 }
-
-
 #fullWidth {
     width:100%;
     margin:0 auto;
@@ -48,14 +45,11 @@ body {
 #fullWidth #map {
     width:100%; 
     min-height:600px;
-/*    min-height:300px; max-height:800px;*/
 }
-
 #list {
     list-style-type:none;
     margin:0; padding:1%;
 }
-
 #list li {
     padding:30px;
     transition:all 0.2s ease;
