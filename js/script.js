@@ -2,6 +2,7 @@ $(document).ready(function(){
 
     var ctx = $("#temperatureReadings").get(0).getContext("2d");
     var ctx2 = $("#pressureReadings").get(0).getContext("2d");
+    var ctx3 = $("#actualTemperature").get(0).getContext("2d");
     
     var data = {
         labels: ["Temp1","Temp2", "Temp3", "Temp4","Temp5","Temp6"],
@@ -62,6 +63,27 @@ $(document).ready(function(){
         scaleSteps: 4
     });
     
+    
+    var data3 = {
+        labels: ["Local", "Regional", "Forecasted"],
+        datasets :[
+        {
+            label: "My First dataset",
+            fillColor: "rgba(220,220,220,0.5)",
+            strokeColor: "rgba(220,220,220,0.8)",
+            highlightFill: "rgba(220,220,220,0.75)",
+            highlightStroke: "rgba(220,220,220,1)",
+            data: [57,57,58]
+        }
+        ]
+    }
+    var tempChart = new Chart(ctx3).Bar(data3,{
+        scaleOverride:true,
+        scaleSteps:8,
+        scaleStepWidth:5,
+        scaleStartValue:32
+    });
+    
     setInterval(function(){
         for(var i=0; i<myLineChart2.datasets[0].points.length; i++){
             var thisOne = myLineChart2.datasets[0].points[i].value;
@@ -89,8 +111,28 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 // add a marker in the given location, attach some popup content to it and open the popup
-L.marker([41.590963, -93.720354]).addTo(map)
-    .bindPopup('A pretty CSS3 popup. <br> Easily customizable.')
-    .openPopup();
-
+var markers = [];
+    
+   markers.push(L.marker([41.590963, -93.720354]).addTo(map).bindPopup('{Dynamic info on this rig}'));
+   markers.push(L.marker([41.614742, -93.642556]).addTo(map).bindPopup('{Dynamic info on this rig}'));
+   markers.push(L.marker([41.534352, -93.847177]).addTo(map).bindPopup('{Dynamic info on this rig}'));
+   markers.push(L.marker([41.675802, -93.650109]).addTo(map).bindPopup('{Dynamic info on this rig}'));
+   markers.push(L.marker([41.639378, -93.494584]).addTo(map).bindPopup('{Dynamic info on this rig}'));
+    
+    var group = new L.featureGroup([markers[0],markers[1],markers[2],markers[3],markers[4]]);
+    map.fitBounds(group.getBounds());
+    
+    listListeners(map, markers);
+    
+    
 });
+
+
+function listListeners(map, markers){
+    $("#list li").click(function(e){
+        $(".active").removeClass("active");
+        $(this).addClass("active");
+        console.log($(this).index());
+        markers[$(this).index()].openPopup();
+    });
+}
