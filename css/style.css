@@ -57,11 +57,20 @@ body {
 
 #list li {
     padding:30px;
+    transition:all 0.2s ease;
 }
+
 #list li:nth-child(even) {
     background:#2f4353;
 }
 #list li:hover {
     cursor:pointer;
     background:#2980B9;
+}
+.active {
+    padding-left:10% !important;
+    background:#2980B9 !important;
+}
+.leaflet-popup{
+     color:#2C3E50;   
 }
