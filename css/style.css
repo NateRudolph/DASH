@@ -19,10 +19,11 @@ body {
     font-family: 'Oswald', sans-serif;
     background: #2C3E50;
     width:30%; height:100%;
-/*    position:relative;*/
     float:left;
 }
 #sideMenu h1 {
+    margin-left:1%;
+    padding-top:3%;
      font-weight:400;   
 }
 #main {
